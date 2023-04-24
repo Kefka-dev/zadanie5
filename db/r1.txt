@@ -1,0 +1,7 @@
+Salasinka
+102,WWW106
+Kapustova polievka,3
+Fazulova polievka,4
+Bryndzove halusky,6
+Strapacky s kapustou,7
+

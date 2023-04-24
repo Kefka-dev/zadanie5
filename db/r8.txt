@@ -1,0 +1,11 @@
+U Kmotra
+51
+Cordon Blue,7
+Cernohorsky rezen,6
+Kuraci steak,6
+Pecene rebra,9
+Bryndzove halusky,7
+Steak z lososa,10
+Vyprazany ostiepok,10
+Grecky salat,6
+

@@ -1,0 +1,9 @@
+U mami
+5,5
+Vyprazany syr,7
+Vyprazany karfiol,6
+Cheeseburger,4
+Kuraci rezen,8
+Kuracie prsia,9
+Kapustova polievka,5
+

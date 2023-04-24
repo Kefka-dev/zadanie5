@@ -1,0 +1,11 @@
+Divoka kacka
+11,1
+Kacaci tanier,8
+Kuraci steak,6
+Vyprazany syr,5
+Parene buchty,7
+Kuraci perkelt,8
+Kralik na smotane,9
+Bravcovy rezen,8
+Kapustova polievka,3
+

@@ -1,0 +1,9 @@
+Gregory Pizza and Restaurant
+2,16
+Kapustova polievka,3
+Vyprazany syr,6
+Grilovany hermelin,7
+Vyprazany karfiol,5
+Grecky salat,7
+Cezar salat,8
+

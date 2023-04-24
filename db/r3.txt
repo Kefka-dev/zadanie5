@@ -1,0 +1,7 @@
+Diner Lamac
+22,14
+Elvis burger,10
+Cibulove kruzky,8
+Mix salat,7
+Coca Cola,2
+

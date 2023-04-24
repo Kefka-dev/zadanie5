@@ -1,0 +1,13 @@
+Pizza Grande
+2,4
+Kebab v zemli,4
+Kebab v placke,6
+Syrove stangle,7
+Tonno,9
+Regina,8
+Hawai,10
+Pronto,12
+Rustica,10
+Marco Polo,9
+Gazdovska,10
+

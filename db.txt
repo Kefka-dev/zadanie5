@@ -1,0 +1,14 @@
+r1.txt
+r2.txt
+r3
+r3.txt
+r4.txt
+r5.txt
+r6.txt
+r_7
+r7.txt
+r8.txt
+../r9.txt
+r9.txt
+r10.txt
+some_path/r10.txt

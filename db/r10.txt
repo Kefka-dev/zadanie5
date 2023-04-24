@@ -1,0 +1,12 @@
+Burger King
+16,12
+Big King,6
+Whopper,6
+Bacon King,7
+Beef pocket,7
+Hranolky,9
+Chicken wings,9
+BBQ omacka,8
+Coca Cola,abc
+Fanta,1
+

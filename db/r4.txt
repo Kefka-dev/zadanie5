@@ -1,0 +1,11 @@
+Fragolino ristorante
+7,19
+Spaghetti Aglio Olio,10
+Spaghetti Bolognese,9
+Tagliatelle Con Pollo,10
+Tuniakovy salat,7
+Kuraci vyvar,3
+Palacinky s dzemom
+Palacinky s nutellou,7
+Coca Cola,2
+
