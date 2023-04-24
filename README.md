@@ -1,2 +1,2 @@
 # zadanie5
- 
+ Cieľom zadania je napísať program, ktorý načíta databázu reštaurácií a vypíše obsah databázy do terminálu v JSON formáte. Databáza reštaurácií je tvorená viacerými textovými súbormi. Jeden textový súbor predstavuje jednu konkrétnu reštauráciu. Každý textový súbor obsahuje názov reštaurácie, jej súradnice a zoznam ponúkaných jedál. Po úspešnom načítaní sa databáza reštaurácií vypíše do terminálu v JSON formáte. Výpis musí rešpektovať všetky formátovacie pravidlá a vypísaný text musí bez chýb prejsť JSON validátorom. V zadaní si precvičíte prácu so súbormi.
