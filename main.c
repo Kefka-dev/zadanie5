@@ -61,6 +61,16 @@ int getRestNames(const char* dbFileName, FILE_NAME **storeHere)
     return restCount;
 }
 
+int main(int argc, const char* argv[])
+{
+    FILE_NAME *restaurantFiles;
     
+    int numberOfRestaurants;
+    numberOfRestaurants = getRestNames(argv[1],&restaurantFiles);
+    // for (int i = 0; i < numberOfRestaurants; i++)
+    // {
+    //     printf("%2d %20s\n", i, restaurantFiles[i].name);
+    // }
+
     return 0;
 }
