@@ -3,34 +3,7 @@
 #include <string.h>
 
 #define MAX_NAME 1000
-// DATOVE TYPY
-// Poloha na mape
-typedef struct position {
-    int x;
-    int y;
-} POSITION;
 
-// Jedlo
-typedef struct meal {
-    char name[MAX_NAME + 1]; // nazov
-    int price; // cena v EUR
-} MEAL;
-
-// Restauracia
-typedef struct restaurant {
-    char name[MAX_NAME + 1]; // nazov
-    POSITION pos; // poloha
-    int n; // aktualny pocet poloziek ponuky
-    MEAL *menu; // databaza poloziek ponuky
-} RESTAURANT;
-
-void initMenu(RESTAURANT *restaurant)
-{
-    restaurant->menu = (MEAL*)malloc(16*sizeof(MEAL));
-    restaurant->n = 0;
-}
-
-int main(int argc, char* argv[])
 int getRestNames(const char* dbFileName, FILE_NAME **storeHere)
 {
     FILE *db, *tmp;
