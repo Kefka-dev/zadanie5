@@ -3,6 +3,13 @@
 #include <string.h>
 
 #define MAX_NAME 1000
+#define INITIAL_MALLOC_SIZE 16
+//path na miesto kde su ulozene subory s restauraciami
+#define PATH "db\\"
+#define PATH_LEN 4
+#define TRUE 1
+#define FALSE 0
+#define FAILED 1
 
 int getRestNames(const char* dbFileName, FILE_NAME **storeHere)
 {
