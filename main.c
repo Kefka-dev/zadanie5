@@ -11,6 +11,10 @@
 #define FALSE 0
 #define FAILED 1
 
+typedef struct fileName {
+    char name[MAX_NAME+PATH_LEN];
+}FILE_NAME;
+//z db suboru zoberie nazvy suborov s restauraciami, vrati pocet existujucich suborov
 int getRestNames(const char* dbFileName, FILE_NAME **storeHere)
 {
     FILE *db, *tmp;
