@@ -122,6 +122,28 @@ int extractPosition(char* positionString, int* posX, int* posY){
 	return 0;
 }
 
+int extractJedloACenu(char* jedloString, char *p_menoJedla, int*p_price)
+{
+    char *token1, *token2;
+    char buffer[MAX_NAME];
+    token1 = strtok(jedloString, MEAL_PRICE_DELIM);
+    token2 = strtok(NULL, MEAL_PRICE_DELIM);
+
+    if(token1 == NULL || token2 == NULL)
+	{
+		return 1;
+	}
+
+    if (isNumber(token2) == FALSE)
+	{
+		return 1;
+	}
+
+    //sscanf(token1, "%s", p_menoJedla);
+    strcpy(p_menoJedla,token1);
+    sscanf(token2, "%d", p_price);
+    return 0;
+}
 
 int main(int argc, const char* argv[])
 {
