@@ -218,5 +218,49 @@ int main(int argc, const char* argv[])
 
         fclose(restRecord);
     }
+
+    printf("{\n%s\"Restaurants\":\n%s[\n", JSON_OFFSET, JSON_OFFSET);
+    int invalidAmount=0;
+    for (int i = 0; i < numberOfRestFiles; i++)
+    {
+        if (restaurantFiles[i].valid != TRUE)
+        {
+            invalidAmount++;
+        }
+        else
+        {
+            printf("%s%s{\n",JSON_OFFSET, JSON_OFFSET);
+            printf("%s%s%s\"Name\": \"%s\",\n", JSON_OFFSET,JSON_OFFSET,JSON_OFFSET,db[i].name);
+            printf("%s%s%s\"Position\":\n", JSON_OFFSET,JSON_OFFSET,JSON_OFFSET);
+            printf("%s%s%s{\n", JSON_OFFSET,JSON_OFFSET,JSON_OFFSET);
+            printf("%s%s%s%s\"X\": %d,\n", JSON_OFFSET,JSON_OFFSET,JSON_OFFSET, JSON_OFFSET, db[i].pos.x);
+            printf("%s%s%s%s\"Y\": %d\n", JSON_OFFSET,JSON_OFFSET,JSON_OFFSET, JSON_OFFSET, db[i].pos.y);
+            printf("%s%s%s},\n", JSON_OFFSET,JSON_OFFSET,JSON_OFFSET);
+            printf("%s%s%s\"Menu\":\n", JSON_OFFSET,JSON_OFFSET,JSON_OFFSET);
+            printf("%s%s%s[\n", JSON_OFFSET,JSON_OFFSET,JSON_OFFSET);
+            for (int j = 0; j < db[i].n; j++)
+            {
+                printf("%s%s%s%s{\n", JSON_OFFSET,JSON_OFFSET,JSON_OFFSET,JSON_OFFSET);
+                printf("%s%s%s%s%s\"Name\": \"%s\",\n", JSON_OFFSET,JSON_OFFSET,JSON_OFFSET,JSON_OFFSET,JSON_OFFSET, db[i].menu[j].name);
+                printf("%s%s%s%s%s\"Price\": %d\n", JSON_OFFSET,JSON_OFFSET,JSON_OFFSET,JSON_OFFSET,JSON_OFFSET, db[i].menu[j].price);
+                if (j==(db[i].n)-1)
+                {
+                    printf("%s%s%s%s}\n", JSON_OFFSET,JSON_OFFSET,JSON_OFFSET,JSON_OFFSET);
+                    continue;
+                }
+                printf("%s%s%s%s},\n", JSON_OFFSET,JSON_OFFSET,JSON_OFFSET,JSON_OFFSET);
+            }
+            printf("%s%s%s]\n", JSON_OFFSET,JSON_OFFSET,JSON_OFFSET);
+            //printf("i=%d counter =%d\n",i, numberOfRestFiles-invalidAmount+1);
+            if (i == numberOfRestFiles-invalidAmount+1)
+            {
+                printf("%s%s}\n",JSON_OFFSET, JSON_OFFSET);
+                continue;
+            }
+            printf("%s%s},\n",JSON_OFFSET, JSON_OFFSET);
+
+        }
+    }
+    printf("%s]\n}\n", JSON_OFFSET);
     return 0;
 }
