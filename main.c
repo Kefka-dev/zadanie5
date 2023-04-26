@@ -262,5 +262,12 @@ int main(int argc, const char* argv[])
         }
     }
     printf("%s]\n}\n", JSON_OFFSET);
+    
+
+    for (int i = 0; i < numberOfRestFiles; i++)
+    {
+        free(db[i].menu);
+    }
+    free(restaurantFiles);
     return 0;
 }
