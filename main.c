@@ -18,6 +18,7 @@
 
 typedef struct fileName {
     char name[MAX_NAME+PATH_LEN];
+    int valid;
 }FILE_NAME;
 
 // Poloha na mape
