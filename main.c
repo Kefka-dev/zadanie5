@@ -19,6 +19,27 @@
 typedef struct fileName {
     char name[MAX_NAME+PATH_LEN];
 }FILE_NAME;
+
+// Poloha na mape
+typedef struct position {
+    int x;
+    int y;
+} POSITION;
+
+// Jedlo
+typedef struct meal {
+    char name[MAX_NAME]; // nazov
+    int price; // cena v EUR
+} MEAL;
+
+// Restauracia
+typedef struct restaurant {
+    char name[MAX_NAME]; // nazov
+    POSITION pos; // poloha
+    int n; // aktualny pocet poloziek ponuky
+    MEAL *menu; // databaza poloziek ponuky
+} RESTAURANT;
+
 //z db suboru zoberie nazvy suborov s restauraciami, vrati pocet existujucich suborov
 int getRestNames(const char* dbFileName, FILE_NAME **storeHere)
 {
