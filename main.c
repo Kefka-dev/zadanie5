@@ -87,6 +87,41 @@ int getRestNames(const char* dbFileName, FILE_NAME **storeHere)
     }
     return restCount;
 }
+//return 1 ak je string cislo, inac 0
+int isNumber(char *string)
+{
+	for (int i = 0; i < strlen(string); i++)
+	{
+		if(isdigit(string[i]) == FALSE)
+		{
+			return 0;
+		}
+	}
+	return 1;
+}
+
+//return 1 ak nastala chybova sutuacia
+int extractPosition(char* positionString, int* posX, int* posY){
+	char *token1, *token2;
+	token1 = strtok(positionString, POS_DELIM);
+	token2 = strtok(NULL, POS_DELIM);
+
+	if(token1 == NULL || token2 == NULL)
+	{
+		return 1;
+	}
+	
+	if (isNumber(token1) == FALSE || isNumber(token2) == FALSE)
+	{
+		return 1;
+	}
+	
+	sscanf(token1, "%d", posX);
+	sscanf(token2, "%d", posY);
+	
+	return 0;
+}
+
 
 int main(int argc, const char* argv[])
 {
