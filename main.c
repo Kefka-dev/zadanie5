@@ -60,14 +60,14 @@ int getRestNames(const char* dbFileName, FILE_NAME **storeHere)
         if(buffer[strlen(buffer)-1] == '\n')  
             buffer[strlen(buffer)-1] = '\0';
         strcat(path, buffer);
+        path[strlen(path)-1] = '\0';
         //printf("%s\n", path);
         tmp = fopen(path, "r"); 
-        //
         if ( tmp == NULL)
         {
             //printf("file cislo %2d sa nepodarilo otvorit\n", restCount);
             fprintf(stderr, "E1 %s\n", buffer);
-            path[PATH_LEN-1] = '\0';
+            path[PATH_LEN] = '\0';
             continue;
         }
         else
@@ -79,9 +79,9 @@ int getRestNames(const char* dbFileName, FILE_NAME **storeHere)
             }
             
             strcpy((*storeHere)[restCount].name, path);
-            //printf("file cislo %2d otvoreny\n", restCount);
+            (*storeHere)[restCount].valid = TRUE;
             fclose(tmp);
-            path[PATH_LEN-1] = '\0';
+            path[PATH_LEN] = '\0';
         }
         restCount++;
     }
