@@ -1,15 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 #define MAX_NAME 1000
+#define BUFFER_SIZE 2048
 #define INITIAL_MALLOC_SIZE 16
 //path na miesto kde su ulozene subory s restauraciami
-#define PATH "db\\"
-#define PATH_LEN 4
+#define PATH "db/"
+#define PATH_LEN 3
 #define TRUE 1
 #define FALSE 0
 #define FAILED 1
+#define POS_DELIM ","
+#define MEAL_PRICE_DELIM ","
+#define JSON_OFFSET "   "
 
 typedef struct fileName {
     char name[MAX_NAME+PATH_LEN];
