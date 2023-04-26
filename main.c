@@ -149,12 +149,8 @@ int main(int argc, const char* argv[])
 {
     FILE_NAME *restaurantFiles;
     
-    int numberOfRestaurants;
-    numberOfRestaurants = getRestNames(argv[1],&restaurantFiles);
-    // for (int i = 0; i < numberOfRestaurants; i++)
-    // {
-    //     printf("%2d %20s\n", i, restaurantFiles[i].name);
-    // }
+    int numberOfRestFiles;
+    numberOfRestFiles = getRestNames(argv[1],&restaurantFiles);
 
     return 0;
 }
