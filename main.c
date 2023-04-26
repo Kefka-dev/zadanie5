@@ -152,5 +152,71 @@ int main(int argc, const char* argv[])
     int numberOfRestFiles;
     numberOfRestFiles = getRestNames(argv[1],&restaurantFiles);
 
+    ///////////
+    FILE *restRecord;
+    char readBuffer[BUFFER_SIZE];
+    int lineCount, errCheck, jedloCount =0;
+    RESTAURANT db[numberOfRestFiles];
+    
+    int menuSize = INITIAL_MALLOC_SIZE;
+    //going through each restRecord
+    for (int i = 0; i < numberOfRestFiles; i++)
+    {
+        restRecord = fopen(restaurantFiles[i].name, "r");
+        //initial menu allocation
+        db[i].menu = (MEAL*)malloc(menuSize*sizeof(MEAL));
+        if (restRecord != NULL)
+        {
+            // printf("SUCCESS\n");
+            //reading each line of a restRecord file
+            lineCount = 1;
+            jedloCount = 0;
+            while (strcmp(fgets(readBuffer, BUFFER_SIZE, restRecord), "\n"))
+            {
+                readBuffer[strlen(readBuffer)-1] = '\0';
+                //printf("i:%d %s\n", i, readBuffer);
+                if (lineCount == 1)
+                {
+                    strcpy(db[i].name, readBuffer);
+                }
+                //overenie ci je pozicia vo validnom formate,
+                //ak nie tak sa vypise chyba a nastavi flag ze file cislo i nie je valid file
+                else if (lineCount == 2)
+                {
+                    if(extractPosition(readBuffer, &db[i].pos.x, &db[i].pos.y) == FAILED)
+                    {
+                        fprintf(stderr, "E2 %s\n", (restaurantFiles[i].name)+PATH_LEN);
+                        restaurantFiles[i].valid = FALSE;
+                        break;
+                    }
+                }
+                else
+                {
+                    if(jedloCount == menuSize)
+                    {
+                        menuSize = menuSize + 16;
+                        db[i].menu = (MEAL*)realloc(db[i].menu, menuSize*sizeof(MEAL));
+                    }
+                    if(extractJedloACenu(readBuffer,db[i].menu[jedloCount].name, &db[i].menu[jedloCount].price) == FAILED)
+                    {
+                        fprintf(stderr, "E2 %s\n", (restaurantFiles[i].name)+PATH_LEN);
+                        restaurantFiles[i].valid = FALSE;
+                        break;
+                    }
+                    jedloCount++;
+                }
+                lineCount++;
+            }
+            db[i].n = jedloCount;
+        }
+        else
+        {
+            printf("FILE SA NEOTVORIL\n");
+            continue;
+        }
+        
+
+        fclose(restRecord);
+    }
     return 0;
 }
